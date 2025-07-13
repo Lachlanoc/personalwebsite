@@ -9,7 +9,7 @@ declare global {
 
 type ColorSchemePreference = "dark" | "light";
 
-const STORAGE_KEY = "nextjs-blog-starter-theme";
+const STORAGE_KEY = "LachlanOConnell:color-scheme-preference";
 const modes: ColorSchemePreference[] = ["dark", "light"];
 
 /** to reuse updateDOM function defined inside injected script */
@@ -57,7 +57,12 @@ let updateDOM: () => void;
  * Switch button to quickly toggle user preference.
  */
 const Switch = () => {
-  const [mode, setMode] = useState<ColorSchemePreference>("light"); // hardcoded fallback
+  const [mode, setMode] = useState<ColorSchemePreference>(
+    () =>
+      ((typeof localStorage !== "undefined" &&
+        localStorage.getItem(STORAGE_KEY)) ??
+        "light") as ColorSchemePreference,
+  );
 
   useEffect(() => {
     // store global functions to local variables to avoid any interference
