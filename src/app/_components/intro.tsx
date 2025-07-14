@@ -5,7 +5,7 @@ export function Intro() {
         Lachlan O'Connell
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        Myself
+          Add buttons here  
       </h4>
     </section>
   );
