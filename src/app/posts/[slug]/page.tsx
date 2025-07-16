@@ -21,7 +21,7 @@ export default async function Post(props: Params) {
     <main>
       <Container>
         <Header />
-        <article className="mb-32">
+        <article className="prose max-w-none dark:prose-invert mb-16">
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}

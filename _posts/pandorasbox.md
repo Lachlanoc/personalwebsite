@@ -1,21 +1,22 @@
 ---
 title: "Pandora's Box AI Honeypot"
-excerpt: "A fine-tuned LLM powered honey-pot, providing near-realtime realistic responses to web requests. Developed "
-coverImage: "/assets/blog/pandorasbox/cover.jpg"
+excerpt: "A fine-tuned LLM powered honey-pot, providing near-realtime realistic responses to web requests. Developed for LaunchHacks IV."
+coverImage: "/assets/blog/pandorasbox/cover.webp"
 date: "2025-07-14"
 ogImage:
-  url: "/assets/blog/pandorasbox/cover.jpg"
+  url: "/assets/blog/pandorasbox/treasure.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+## What is Pandora's Box?
+Pandora's Box a LLM powered honey-pot. A security measure, who's goal is to study cyberattacks and deflect attackers away from real systems.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+This is achieved by training our model to provide context-aware responses to web requests. This makes it less likely for an attacker to realise they're going after a honeypot and provides more insight into their methods and how to react.
 
-## Lorem Ipsum
+We were inspired to build Pandora's Box during LaunchHacks IV (A hackathon hosted on devpost) after finding that existing honeypot solutions relied on external LLM APIs. These often come with ongoing costs, and privacy concerns. To fix this we set out to make a solution that was easy to deploy and could be run locally.
 
-# Test
-## Test
-### Test
-#### Test
-##### Test
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+## The Build Process
+I primarily worked on the underlying honey-pot during the project. One of my other teammates suggested we use Go and while all my experience with Go was reading some of the 'Go by Example' guide to the language I was keen for the challenge.
+
+Having experience working with individual packets to make an intrusion detection system for a university assignment I initially utilised gopacket to try and intercept the packets. After spending the first night working on this I came to the realisation that this was way over complicating it and would require managing the handshake process as well as requiring Windows users to install either WinPcap or Npcap. The solution to this was Go's awesome net/http library to create a basic http server. Working with net/http proved to be quite fun, its well documented and has plenty of online guides centered around it. In the end I had a server I could send requests to and get back responses from our LLM.
+
+For our LLM we trained the existing [distilgpt2](https://huggingface.co/distilbert/distilgpt2) to leverage its small size in creating fast responses. For training, a combination of real data and synthesised data created using a python script was used to conduct 10 training runs during the event. 
