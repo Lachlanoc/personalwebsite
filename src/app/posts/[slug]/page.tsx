@@ -16,12 +16,15 @@ export default async function Post(props: Params) {
   }
 
   const content = await markdownToHtml(post.content || "");
-
   return (
     <main>
       <Container>
         <Header />
-        <article className="prose max-w-none dark:prose-invert mb-16">
+        <article className="prose prose-headings:break-words prose-headings:hyphens-auto prose-lg
+            prose-headings:mt-8 prose-headings:font-semibold
+            prose-h1:text-3xl sm:prose-h1:text-5xl prose-h1:font-extrabold sm:prose-h1:font-bold prose-h2:text-3xl
+            prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-2xl prose-h6:text-xl
+            dark:text-slate-400 dark:prose-headings:text-slate-400 dark:prose-a:text-slate-400 overflow-hidden max-w-none mb-16">
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
