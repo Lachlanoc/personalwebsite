@@ -1,4 +1,5 @@
 import Container from "@/app/_components/container";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -6,8 +7,12 @@ export function Footer() {
       <Container>
         <div className="py-8 flex flex-col lg:flex-row items-center">
           <h3 className="text-xl lg:text-[1rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Lachlan O'Connell ©
+            <Link href="/" className="hover:underline">
+              Lachlan O'Connell ©
+            </Link>
           </h3>
+
+          {/* add social media links */}
           {/* <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
               href="https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates"
