@@ -1,5 +1,6 @@
 import Container from "@/app/_components/container";
 import Link from "next/link";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export function Footer() {
   return (
@@ -11,22 +12,20 @@ export function Footer() {
               Lachlan O'Connell ©
             </Link>
           </h3>
-
-          {/* add social media links */}
-          {/* <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+          <div className="flex flex-col lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
             <a
-              href="https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+              href="https://github.com/Lachlanoc"
+              className="text-white lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
             >
-              Read Documentation
+              <FaGithub />
             </a>
             <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples`}
-              className="mx-3 font-bold hover:underline"
+              href="https://linkedin.com/in/lachlan-oc"
+              className="text-white pl-6 pr-4 lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
             >
-              View on GitHub
+              <FaLinkedin />
             </a>
-          </div> */}
+          </div>
         </div>
       </Container>
     </footer>
