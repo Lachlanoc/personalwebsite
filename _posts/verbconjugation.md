@@ -13,7 +13,7 @@ I've always found verb conjugation to be one of the hardest parts of learning Ja
 that I could print out and hang up.
 
 I ended up with 83 words in total. I did use an LLM to fill in the meanings, formality, and grammar type after realising
-how long it would take me to do by hand, however I then checked over everything by myself and with my tutor.
+how long it would take me to do by hand, however I then checked over everything by myself and with my tutor correcting or altering as necessary.
 
 |Form          |Meaning (Refined)                                                                                           |Formality|Grammar Type     |
 |--------------|------------------------------------------------------------------------------------------------------------|---------|-----------------|

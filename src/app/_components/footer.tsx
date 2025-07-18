@@ -15,13 +15,13 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
             <a
               href="https://github.com/Lachlanoc"
-              className="text-white lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
+              className="dark:text-white lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
             >
               <FaGithub />
             </a>
             <a
               href="https://linkedin.com/in/lachlan-oc"
-              className="text-white pl-6 pr-4 lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
+              className="dark:text-white pl-6 pr-4 lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
             >
               <FaLinkedin />
             </a>
