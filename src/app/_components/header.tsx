@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between">
-      <h1 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-6 mt-6">
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-6 mt-6">
         <Link href="/" className="hover:underline">
            Lachlan O'Connell
         </Link>
