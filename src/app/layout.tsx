@@ -36,15 +36,11 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <div className="flex flex-col md:flex-row items-center md:items-start">
-          <div className="order-1 md:order-2 w-full md:w-auto mb-4 md:mb-0">
+         <div className="">
             <ThemeSwitcher />
           </div>
-          <div className="order-2 md:order-1 w-full text-center md:text-left">
-            <div className="min-h-screen">{children}</div>
-            <Footer />
-          </div>
-        </div>
+          <div className="min-h-screen">{children}</div>
+        <Footer />
       </body>
     </html>
   );

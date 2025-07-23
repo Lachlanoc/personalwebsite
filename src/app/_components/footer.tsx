@@ -12,7 +12,7 @@ export function Footer() {
               Lachlan O'Connell ©
             </Link>
           </h3>
-          <div className="flex flex-col lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
+          <div className="flex lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
             <a
               href="https://github.com/Lachlanoc"
               className="dark:text-white lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
