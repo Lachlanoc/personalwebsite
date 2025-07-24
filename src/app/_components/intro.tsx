@@ -32,7 +32,6 @@ export function Intro() {
         </Link>
         <Link 
           href="/about"
-          onClick={handleHomeClick}
           className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight hover:underline mr-10">
           About
         </Link>
