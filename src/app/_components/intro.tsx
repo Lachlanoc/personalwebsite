@@ -15,7 +15,7 @@ export function Intro() {
 
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between ">
-      <h1 className="flex flex-col sm:flex-row text-5xl md:text-7xl text-center sm:text-left font-bold tracking-tighter leading-tight 
+      <h1 className="flex flex-col sm:flex-row text-3xl md:text-7xl text-center sm:text-left font-bold tracking-tight leading-tight 
       mt-6 mb-2 md:mb-12 md:pr-8">
         <Link href="/" onClick={handleHomeClick} className="md:mr-2">
           Lachlan&nbsp;
