@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between">
+    <section className="flex-col md:flex-row flex mb-2 md:mb-0 items-center md:justify-between">
       <h1 className="flex flex-col sm:flex-row text-center sm:text-left text-3xl md:text-4xl
-                    font-bold tracking-tight md:tracking-tighter leading-tight mb-6 mt-6">
+                    font-bold tracking-tight md:tracking-tighter leading-tight mb-2 mt-6">
         <Link href="/" className="md:mr-2">
           Lachlan&nbsp;
         </Link>
@@ -12,7 +12,7 @@ const Header = () => {
           O'Connell
         </Link>
       </h1>
-      <div className="text-center md:text-left text-lg">
+      <div className="text-center mt-5 md:text-left text-lg">
         <Link 
           href="/"
           className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight hover:underline mr-10">
