@@ -1,10 +1,10 @@
 ---
 title: "Replacing Static Price Tags with QR Codes"
 excerpt: "Utilising QR codes to allow for easy adjustment of product prices without having to rewrite or print price tags every time."
-coverImage: "/assets/blog/qrcodeprices/qrcode.webp"
+coverImage: "/assets/blog/qrcodeprices/cover.webp"
 date: "2025-07-27"
 ogImage:
-  url: "/assets/blog/qrcodeprices/qrcode.webp"
+  url: "/assets/blog/qrcodeprices/cover.webp"
 ---
 
 This is a solution I came up with for a problem in a fishing tackle store where
@@ -12,21 +12,26 @@ I was working.
 
 ## The Problem
 
-For a long time if customers wanted to know how much an item cost they would
-either have to try and work out the product name and search the website
-themselves or ask an employee how much it is. This is quite an inconvenience and
-can make customers feel bad for constantly having to ask. The reason why no price
-tags had been previously added was the sheer number of products, how often new products
-are added to shelves and that the prices become out of date if they need to be changed.
+The fishing tackle store is predominately online but does have a physical showroom 
+that customers can visit. For a long time if customers wanted to know how much an 
+item cost, they would either have to try and work out the product name and search 
+the website themselves, or ask an employee how much it is. Having to do either was 
+quite an inconvenience and would make the customers feel bad for constantly having 
+to ask. The reason why no price tags had been previously added was the sheer number 
+of products, how often new products are added to shelves, and that the price tags 
+become out of date and needed to be changed each time prices or stock were updated.
 
 ## A New Solution
 
-I came up with an idea to try and address the concerns with traditional price
-tags. By utilising QR codes to the website's product page it would not only
-allow for easy updates but would also drive traffic to the website.
-Additionally if someone doesn't close the tab in their phone's web browser
-they might see the product they were looking at again at a later date. This
-could potentially generate more sales after someone leaves the showroom.
+I came up with an idea to try and address the concerns with traditional price tags. 
+By utilising QR codes to the website's product page the customer in the showroom could 
+scan the code on the flip tag above the item and go to the website where they could 
+see the current price, without having to ask the staff. This solution means that every 
+time a price update occurs in the online store it is immediately visible in the physical 
+showroom.  The added advantage is that it allowed not only easy price updates but also 
+drives traffic to the website, which is great for SEO. Additionally, if someone doesn't 
+close the tab in their phone's web browser, they can see the product they were looking 
+at again at a later date. This potentially will generate more sales for the online store.
 
 ## Automatically Generated QR Codes
 
