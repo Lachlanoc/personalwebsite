@@ -16,6 +16,9 @@ export default function ContactPage() {
               <br />
               <br />
               You can find me on GitHub, LinkedIn, or send me an email directly.
+              <br />
+              <br />
+              lachlanoco [at] gmail.com
             </p>
             <div className="flex flex-row items-center justify-center gap-10 text-5xl text-neutral-700 dark:text-white">
               <a
@@ -31,13 +34,6 @@ export default function ContactPage() {
                 className="transition-transform duration-200 hover:scale-110"
               >
                 <FaLinkedin />
-              </a>
-              <a
-                href="mailto:lachlanoco@gmail.com"
-                aria-label="Email"
-                className="transition-transform duration-200 hover:scale-110"
-              >
-                <FaEnvelope />
               </a>
             </div>
           </article>
