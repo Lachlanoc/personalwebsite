@@ -36,15 +36,15 @@ Action Module
 - Allows the person who reviews suspicious logs to take action. Includes options for creating and deleting firewall rules, deleting files, and killing processes.
 
 This modules would report to and receive instructions from the control server which would:
-- Run the network flow analysis and flag suspicious entries
-- Proxy actions from the Web Interface to the appropriate Client's Action Module
-- Collate logs and store the client identifiers for entries
+- Run the network flow analysis and flag suspicious entries.
+- Proxy actions from the Web Interface to the appropriate Client's Action Module.
+- Collate logs and store the client identifiers for entries.
 
 Then the Web Interface connects to the control server through a REST-ful API, its main features include:
-- Context specific actions for each Client
-- Overview of flagged logs
-- Monitoring of invidual client logs
-- Relevant stats and graphs
+- Context specific actions for each Client.
+- Overview of flagged logs.
+- Monitoring of invidual client logs.
+- Relevant stats and graphs.
 
 After a little more planning we came up a design that looks like this:
 ![program_architecture](/assets/blog/legionnaire/architecture.webp)
@@ -83,6 +83,7 @@ I was pretty lost which made for an interesting challenge.
 
 # Final Remarks
 
-While we weren't able to take out any prizes I was really happy with what my team was able to create. If you want to check out the project further you can find the source code on [GitHub](https://github.com/LegionnaireDevs/legionnaire)
+While we weren't able to take out any prizes I was really happy with what my team was able to create.
+If you want to check out the project further you can find the source code on [GitHub](https://github.com/LegionnaireDevs/legionnaire).
 
 ![teamphoto](/assets/blog/legionnaire/team.webp)
