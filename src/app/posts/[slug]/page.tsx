@@ -20,7 +20,7 @@ export default async function Post(props: Params) {
     <main>
       <Container>
         <Header />
-        <article className="prose prose-headings:break-words prose-headings:hyphens-auto prose-lg
+        <article className="prose text-black prose-headings:break-words prose-headings:hyphens-auto prose-lg
             prose-headings:mt-8 prose-headings:font-semibold
             prose-h1:text-3xl sm:prose-h1:text-5xl prose-h1:font-extrabold sm:prose-h1:font-bold prose-h2:text-3xl
             prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-2xl prose-h6:text-xl overflow-x-auto
