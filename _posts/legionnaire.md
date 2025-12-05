@@ -4,7 +4,7 @@ excerpt: "A Security Information and Event Management platform that provides aut
 coverImage: "/assets/blog/legionnaire/cover.webp"
 date: "2025-09-03"
 ogImage:
-  url: "/assets/blog/pandorasbox/icon.webp"
+  url: "/assets/blog/legionnaire/icon.webp"
 ---
 
 # What is Legionnaire?
