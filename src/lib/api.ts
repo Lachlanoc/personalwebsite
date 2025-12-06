@@ -26,3 +26,13 @@ export function getAllPosts(): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+const HERO_POST_SLUG = "cyberbattles";
+
+export function getHeroPost(): Post | null {
+  try {
+    return getPostBySlug(HERO_POST_SLUG);
+  } catch {
+    return null;
+  }
+}
