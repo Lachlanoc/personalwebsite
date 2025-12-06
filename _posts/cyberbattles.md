@@ -66,23 +66,23 @@ Regardless of which way you play all that's required is someone creates a lobby 
 After that you can start it up and players are provided with instructions to get connected and start playing.
 
 # Benefits of Building the Platform
-** CyberBattl.es was a huge project and one of my most valuable experiences at university. Going in I wanted to practice leveraging my skills in being able to put my self in others shoes to think outside the box on problems. After completing CyberBattl.es I feel I've gotten so much more experience at this and **
+CyberBattl.es was a huge project and one of my most valuable experiences at university. Going in I wanted to challenge myself and build on my skill sets. Throughout the project I found one of my strengths was being able to put my self in others shoes to better understand how they would use our interfaces and attempt challenges. Being able to see a problem from a different angle enabled me to effectively think outside the box on problems. After completing CyberBattl.es I've developed more in this area and it has given me valuable insights for future projects.
 
-Despite not spending most of my time actually writing code this project has helped me improve in unexpected ways. I am only improving when it comes to parsing others code to understand it faster and spot bugs quicker, this helps immensely when working on my own projects and have to diagnose issues.
+Despite not spending most of my time actually writing code, this project has helped me improve in unexpected ways. I am improving when it comes to parsing others code, and can understand it faster and spot bugs quicker. This helps immensely when working on my own projects and have to diagnose issues.
 I've also greatly improved my soft skills in my ability to work in teams, collaborate effectively, share ideas, and so much more.
 
 Another huge thing that has come from building CyberBattl.es is the award we won at UQ Illuminate.
 # An Awesome Turnout
-After being one of 5 teams to be nominated from the course to participate in UQ Illuminate, UQ's showcase for projects by final year students. Sam and I were more motivated than ever to polish off the project and create something awesome. We both got cracking trying to tidy up the website and create an extra challenge for demonstrations. After bouncing some ideas off each other we also came up with some awesome ideas for our display at the showcase.
+After being one of only 5 teams to be nominated from the course to participate in UQ Illuminate, UQ's showcase for projects by final year students. Sam and I were more motivated than ever to polish off the project and create something awesome. We both got cracking tidying up the website and creating an extra challenge for demonstrations. After bouncing some ideas off each other we also came up with some awesome ideas for our display at the showcase.
 ![showcase](/assets/blog/cyberbattles/showcase.webp)
 
-Standing out from others with our oversized monitors, red and blue themed sweets, and dark sheets as tablecloths, our first impressions at the event were like no other.
+Standing out from others with our oversized monitors, red and blue themed sweets, and dark tablecloths, our first impressions at the event were like no other.
 
-Getting to present something we had worked so hard on was a lot of fun. When it came time for judging however I really focused in on memorising a solid introduction and explanation of the product. Then Sam and I co-ordinated the flow of the demonstration so we could best utilise the time we were given to keep the judges engaged and distract them from any downtime such as when I have to download the VPN config and connect to it.
+Getting to present something we had worked so hard on was a lot of fun. When it came time for judging however I really focused in on memorising a solid introduction and explanation of the product. Sam and I co-ordinated the flow of the demonstration so we could best utilise the time we were given to keep the judges engaged and distract them from any downtime, such as when I have to download the VPN config and connect to it.
 
 ![award](/assets/blog/cyberbattles/award.webp)
 
-Evidently this must've worked well as later that night we got to get up on stage and received the award for [Best Cyber Security and Data Privacy Project](https://illuminate.uqcloud.net/winners). This was such an exciting moment getting to stand on stage in front of a large audience and be recognised for something we worked so hard on. A big thankyou to Sam for all his effort and work in the project and in the showcase as well as the rest of the CyberBattl.es team for their continued work and support throughout the semester.
+Evidently our work paid off as later that night we got to get up on stage and received the award for [Best Cyber Security and Data Privacy Project](https://illuminate.uqcloud.net/winners). This was such an exciting moment getting to stand on stage in front of a large audience and be recognised for something we worked so hard on. A big thankyou to Sam for all his effort and work in the project and in the showcase as well as the rest of the CyberBattl.es team for their continued work and support throughout the semester.
 ![stage](/assets/blog/cyberbattles/stage.webp)
 # Final Remarks and Future Plans
 CyberBattl.es represents the most time I've put into a single coding project and was such a blast. I hope that through the creation of this platform we have been able to solve a real problem and help out others to get their start in attack-defence CTFs in the future.
