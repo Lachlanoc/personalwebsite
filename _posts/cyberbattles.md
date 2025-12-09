@@ -1,6 +1,6 @@
 ---
 title: "CyberBattl.es - An Attack-Defense Style CTF Platform"
-excerpt: "Winner of the 2025 Best Cybersecurity and Data Privacy Project at The University of Queensland's Illuminate showcase."
+excerpt: "🏆 Winner of the 2025 Best Cybersecurity and Data Privacy Project at The University of Queensland's graduate showcase, Illuminate showcase."
 coverImage: "/assets/blog/cyberbattles/cover.webp"
 date: "2025-12-01"
 ogImage:
