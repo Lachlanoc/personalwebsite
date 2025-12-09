@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 
@@ -19,7 +18,6 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-        <Header />
         <article className="prose text-black prose-headings:break-words prose-headings:hyphens-auto prose-lg
             prose-headings:mt-8 prose-headings:font-semibold
             prose-h1:text-3xl sm:prose-h1:text-5xl prose-h1:font-extrabold sm:prose-h1:font-bold prose-h2:text-3xl

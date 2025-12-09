@@ -11,7 +11,7 @@ type Props = {
 export function PostHeader({ title, coverImage, date }: Props) {
   return (
     <>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="mb-8 md:mb-16 sm:mx-0 not-prose">
         <CoverImage title={title} src={coverImage} />
       </div>
       <PostTitle>{title}</PostTitle>

@@ -1,4 +1,6 @@
 import Footer from "@/app/_components/footer";
+import Header from "@/app/_components/header";
+import Container from "@/app/_components/container";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
@@ -36,10 +38,15 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-         <div className="">
+          <div className="">
             <ThemeSwitcher />
           </div>
-          <div className="min-h-screen">{children}</div>
+          <div className="min-h-screen">
+            <Container>
+              <Header />
+            </Container>
+            {children}
+          </div>
         <Footer />
       </body>
     </html>

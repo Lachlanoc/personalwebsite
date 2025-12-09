@@ -1,12 +1,10 @@
 import Container from "@/app/_components/container";
-import Header from "../_components/header";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa6";
 
 export default function ContactPage() {
   return (
     <main>
       <Container>
-        <Header />
         <div className="pt-16 md:pt-32 pb-12 md:pb-20">
           <article className="flex flex-col items-center justify-center px-6 text-center">
             <h1 className="text-4xl font-bold mb-8">Get in Contact</h1>

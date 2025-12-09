@@ -1,5 +1,4 @@
 import Container from "@/app/_components/container";
-import Header from "../_components/header";
 
 const pfp = "/assets/pfp.webp";
 
@@ -7,7 +6,6 @@ export default function AboutPage() {
   return (
     <main>
       <Container>
-        <Header />
         <article className="flex flex-col items-center justify-center text-center">
           <div className="py-10 sm:py-20">
           <img
