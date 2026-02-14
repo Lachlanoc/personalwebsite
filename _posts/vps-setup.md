@@ -1,6 +1,6 @@
 ---
 title: "How I setup a new VPS"
-excerpt: "Through a combination of CloudFlare, Caddy, Wireguard, and a VPS I have a safe and secure way to access my machines."
+excerpt: "Ensuring things are secure and ready for other applications on a VPS running Debian."
 coverImage: "/assets/blog/vps-setup/cover.webp"
 date: "2026-02-14"
 ogImage:
