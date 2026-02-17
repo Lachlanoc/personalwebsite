@@ -191,7 +191,7 @@ sudo touch /opt/authelia/users_database.yml
 
 # Wireguard
 
-The next step is bridging from the VPS back to your homelab which I will use wireguard for. I have a bit of past experience writing and diagnosing wireguard configs from my work on (cyberbattl.es)[/posts/cyberbattles] which influenced my decision to use it.
+The next step is bridging from the VPS back to your homelab which I will use wireguard for. I have a bit of past experience writing and diagnosing wireguard configs from my work on [cyberbattl.es](/posts/cyberbattles) which influenced my decision to use it.
 
 First step is install wireguard on the VPS.
 ```bash
