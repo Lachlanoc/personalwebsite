@@ -7,7 +7,9 @@ ogImage:
   url: "/assets/blog/vps-setup/cover.webp"
 ---
 
-For my reverse proxy setup that I talk more about in my [Caddy + Authelia setup](/posts/vps-reverseproxy) guide I needed a secure VPS ready for everything to be installed on. Where you get your VPS from doesn't matter too much, in my case I just found a company with servers really close by for minimal latency. As for specs I went for the lowest and cheapest possible at 1VPCU, 1024MB of memory, and 20GB of storage, with a bare Debian install.
+For my reverse proxy setup (that I talk more about in my [guide](/posts/vps-reverseproxy)) I needed a secure VPS ready for everything to be installed on. 
+
+Where you get your VPS from doesn't matter too much, in my case I just found a company with servers really close by for minimal latency. As for specs I went for the lowest and cheapest possible at 1VPCU, 1024MB of memory, and 20GB of storage, with a bare Debian install.
 
 As I'm using Debian this guide will be tailored for it but is easily applicable to everything
 
