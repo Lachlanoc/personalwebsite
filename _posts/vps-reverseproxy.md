@@ -144,7 +144,7 @@ identity_validation:
 
 authentication_backend:
   file:
-    path: /opt/authelia/users_database.yml'
+    path: /config/authelia/users_database.yml'
 
 access_control:
   default_policy: 'one_factor'
@@ -161,11 +161,11 @@ session:
 storage: 
   encryption_key: 'Replace_this'
   local:
-    path: '/opt/authelia/db.sqlite3'
+    path: '/config/authelia/db.sqlite3'
 
 notifier:
   filesystem:
-    filename: '/opt/authelia/notification.txt'
+    filename: '/config/authelia/notification.txt'
 
 identity_providers:
   oidc:
@@ -176,7 +176,7 @@ identity_providers:
           -----BEGIN PRIVATE KEY-----
           -----END PRIVATE KEY-----
 ```
-The last thing that you need to add to the config is your private key. Authelia also has a command to help with this too.
+Now the config needs a private key. Authelia also has a command to help with this too.
 ```bash
 authelia crypto pair rsa generate
 ```
@@ -184,9 +184,29 @@ This generates a public and private key. Copy just the private key in between th
 
 Final step is making the files we reference in the config.
 ```bash
-sudo touch /opt/authelia/db.sqlite3
-sudo touch /opt/authelia/notification.txt
-sudo touch /opt/authelia/users_database.yml
+sudo touch /config/authelia/db.sqlite3
+sudo touch /config/authelia/notification.txt
+sudo touch /config/authelia/users_database.yml
+```
+
+### Adding Accounts
+For this basic setup users need to be added to the users_database.yml file in order to login.
+For these accounts we need a hash of the desired password.
+```bash
+authelia crypto hash generate argon2 --password <YOUR_PASSWORD>
+```
+This password hash can then be used when adding a user.
+
+```
+# /config/authelia/users_database.yml
+users:
+  lachlan:
+    displayname: "lachlan"
+    password: "add_your_password_hash_here"
+    email: "test@gmail.com"
+    groups: 
+      - admins
+      - users
 ```
 
 # Wireguard
@@ -198,7 +218,7 @@ First step is install wireguard on the VPS.
 sudo apt install wireguard
 ```
 
-Then for the keys I'm using this really handy set of bash commands from Mochman's (Bypassing a CGNAT with Wireguard)[github.com/mochman/Bypass_CGNAT] repo.
+Then for the keys I'm using this really handy set of bash commands from Mochman's [Bypassing a CGNAT with Wireguard](github.com/mochman/Bypass_CGNAT) repo.
 ```bash
 umask 077 && printf "[Interface]\nPrivateKey = " | sudo tee /etc/wireguard/wg0.conf > /dev/null
 sudo wg genkey | sudo tee -a /etc/wireguard/wg0.conf | wg pubkey | sudo tee /etc/wireguard/publickey
