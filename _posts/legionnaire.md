@@ -19,7 +19,7 @@ Earlier this year I attended a talk at CrikeyCon called "SIEM-less security; Pan
 
 # The Plan
 
-At the last UQCS hackathon my team struggled with ensuring everyone had work to do and weren't just sitting around waiting for someone else to finish what they are working on.This year we made sure the work was divided evenly and allowed everyone to just put their heads down and get it done.
+At the last UQCS hackathon my team struggled with ensuring everyone had work to do and weren't just sitting around waiting for someone else to finish what they are working on. This year we made sure the work was divided evenly and allowed everyone to just put their heads down and get it done.
 
 Sam came up with a great idea to divide the client program into these 4 modules:
 
