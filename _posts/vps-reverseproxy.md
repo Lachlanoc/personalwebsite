@@ -346,6 +346,8 @@ sudo ufw allow 80
 sudo ufw allow 443
 ```
 
+*(It's important to note that you may need to allow these ports through your VPS's firewall too.)*
+
 # Troubleshooting
 Now, hopefully everything is working and you can use the record you added to Cloudflare to access services running on your home server.
 
@@ -354,7 +356,9 @@ If it isn't however, here are some things to try and diagnose the issue.
 1. Restart both machines, always worth a try.
 2. https://letsdebug.net/ is a great tool for diagnosing most issues that might arise and tests that requests successfully make it to Caddy.
 3. If letsdebug is happy try pinging between the two machines. The IPs designated are 10.0.0.1 on the remote server and 10.0.0.2 on your home server. Try pinging the other machine and see if thats where the issue lies.
-4. If letsdebug has no errors, and wireguard is communicating alright it might just be an issue with the service you're trying to access whether it be a mistyped port or IP. 
+4. If you are on a VPS double check on your providers website there's no additional firewall that you need to allow port 80 and 443 through.
+5. If letsdebug has no errors, and wireguard is communicating alright, and VPS ports are open, it might just be an issue with the service you're trying to access whether it be a mistyped port or IP. 
+
 
 Generally a helpful command to know is:
 ```bash
