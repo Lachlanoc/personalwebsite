@@ -55,12 +55,12 @@ Finding cool ways to create cards has been one of my favourite things to do. Luc
 The general workflow is to try and do things on the web and use [Yomitan](https://yomitan.wiki/) as a popup dictionary to quickly view definitions and forward data through [Anki-Connect](https://git.sr.ht/~foosoft/anki-connect) to create a flashcard.
 
 Some of my favourites tools for creating flashcards are:
-- [Yomitan](https://yomitan.wiki/) for popup dictionaries
-- [asbplayer](https://chromewebstore.google.com/detail/hkledmpjpaehamkiehglnbelcpdflcab?utm_source=item-share-cb) for use on video content
-- [Mokuro](https://github.com/kha-white/mokuro) to OCR images
+- [Yomitan](https://yomitan.wiki/) for popup dictionaries.
+- [asbplayer](https://chromewebstore.google.com/detail/hkledmpjpaehamkiehglnbelcpdflcab?utm_source=item-share-cb) for use on video content.
+- [Mokuro](https://github.com/kha-white/mokuro) to OCR images.
 - [ttu-ttu\'s ebook-reader](https://github.com/ttu-ttu/ebook-reader) for text files or documents.
-- [Migaku](https://migaku.com/) all in one
+- [Migaku](https://migaku.com/) all in one for a price, can feel limiting at times.
 
 And a couple good places to find guides to set them up are:
-- [Donkuri's Immersion-Based Japanese Learning](https://donkuri.github.io/learn-japanese/) more detailed
-- [JP Lazy Guide](https://lazyguidejp.github.io/jp-lazy-guide/) Bit more spoonfed
+- [Donkuri's Immersion-Based Japanese Learning](https://donkuri.github.io/learn-japanese/) more detailed.
+- [JP Lazy Guide](https://lazyguidejp.github.io/jp-lazy-guide/) a bit easier but less detailed.
