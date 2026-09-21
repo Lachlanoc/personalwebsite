@@ -72,3 +72,5 @@ product id and slug for file names, I was able to generate about 100 QR codes a 
 
 In the end this solution was much faster than I anticipated and has made a big
 difference in the showroom to aid customers.
+
+![example qr code](/assets/blog/qrcodeprices/example.webp)
