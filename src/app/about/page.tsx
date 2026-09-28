@@ -1,4 +1,5 @@
 import Container from "@/app/_components/container";
+import { ProfileImage } from "@/app/_components/profile-image";
 
 const pfp = "/assets/pfp.webp";
 
@@ -8,12 +9,7 @@ export default function AboutPage() {
       <Container>
         <article className="flex flex-col items-center justify-center text-center">
           <div className="py-10 sm:py-20">
-          <img
-            src={pfp}
-            alt="Photo of Lachlan O'Connell"
-            className="rounded-full w-96 object-cover shadow-xl
-            border-4 border-neutral-300 dark:border-slate-600 transition-all duration-300"
-          />
+            <ProfileImage src={pfp} alt="Photo of Lachlan O'Connell" />
           </div>
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <p className="text-xl max-w-2xl text-neutral-600 dark:text-neutral-300 mb-8">
