@@ -1,12 +1,15 @@
 import Footer from "@/app/_components/footer";
 import Header from "@/app/_components/header";
+import { site } from "@/lib/site";
 import { themeInitScript } from "@/lib/theme";
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_JP } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 
 import "./globals.css";
 
-// One family for the three scripts the site publishes: prose, code and Japanese.
+// Plex for prose and code. Japanese text uses the reader's system fonts (see
+// --font-sans in globals.css): the web font's declarations alone would add
+// about 67 KB of CSS to every page.
 const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
   style: ["normal", "italic"],
@@ -17,23 +20,13 @@ const plexSans = IBM_Plex_Sans({
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400"],
-  style: ["normal", "italic"],
   variable: "--font-plex-mono",
   display: "swap",
 });
 
-// Japanese glyphs are split into many small files; browsers only fetch the
-// ones a page actually uses, so nothing is preloaded.
-const plexJp = IBM_Plex_Sans_JP({
-  weight: ["400", "600"],
-  preload: false,
-  variable: "--font-plex-jp",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: `Lachlan O'Connell`,
-  description: `Where I post about my projects, and ideas.`,
+  title: { default: site.name, template: `%s | ${site.name}` },
+  description: site.description,
   // openGraph: {
   //   images: [HOME_OG_IMAGE_URL],
   // },
@@ -54,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plexSans.variable} ${plexMono.variable} ${plexJp.variable}`}
+      className={`${plexSans.variable} ${plexMono.variable}`}
       // The theme script may set data-theme before React hydrates.
       suppressHydrationWarning
     >
@@ -75,7 +68,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <div id="content" className="flex-1 pt-10">
+        <div id="content" className="flex-1 pb-24 pt-10">
           {children}
         </div>
         <Footer />

@@ -1,30 +1,44 @@
+import type { Metadata } from "next";
 import Container from "@/app/_components/container";
-import { ProfileImage } from "@/app/_components/profile-image";
+import { SiteImage } from "@/app/_components/site-image";
 
-const pfp = "/assets/pfp.webp";
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default function AboutPage() {
   return (
     <main>
       <Container>
-        <article className="flex flex-col items-center justify-center text-center">
-          <div className="py-10 sm:py-20">
-            <ProfileImage src={pfp} alt="Photo of Lachlan O'Connell" />
+        <div className="grid gap-8 md:grid-cols-[13rem_minmax(0,40rem)] md:gap-12">
+          <SiteImage
+            src="/assets/pfp.webp"
+            alt="Photo of Lachlan O'Connell"
+            sizes="(min-width: 48rem) 13rem, 10rem"
+            priority
+            className="size-40 rounded-full border border-line bg-surface object-cover md:size-52"
+          />
+          <div>
+            <h1 className="text-3xl font-semibold">About me</h1>
+            <div className="mt-5 space-y-5 text-lg leading-[1.65]">
+              <p>
+                My name is Lachlan O'Connell, I'm a student at the University of
+                Queensland currently studying a Bachelor of Computer Science
+                with a dual major in Cyber Security and Programming Languages.
+              </p>
+              <p>
+                I'm passionate about cyber security, particularly on a national
+                scale. I enjoy keeping up with the latest news and trends in
+                the field and am always eager to learn more.
+              </p>
+              <p>
+                In my free time I also enjoy studying Japanese and love
+                exploring ways to apply what I've learnt in computer science to
+                more efficiently learn the language.
+              </p>
+            </div>
           </div>
-          <h1 className="text-4xl font-bold mb-4">About Me</h1>
-          <p className="text-xl max-w-2xl text-muted mb-8">
-            My name is Lachlan O'Connell, I'm a student at the University of Queensland currently studying a
-            Bachelor of Computer Science with a dual major in Cyber Security and Programming Languages. 
-            <br />
-            <br />
-            I'm passionate about cyber security, particularly on a national scale. I enjoy keeping up with the latest
-            news and trends in the field and am always eager to learn more.
-            <br />
-            <br />
-            In my free time I also enjoy studying Japanese and love exploring ways to apply what I've learnt in computer science
-            to more efficiently learn the language.
-          </p>
-        </article>
+        </div>
       </Container>
     </main>
   );

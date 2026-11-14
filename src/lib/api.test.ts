@@ -5,8 +5,10 @@ import {
   getAllPosts,
   getAllTags,
   getPostBySlug,
-  getPostsByTag,
+  getPostsByTagSlug,
+  getTagBySlug,
   readingTime,
+  tagSlug,
 } from "./api.ts";
 
 describe("posts", () => {
@@ -69,18 +71,34 @@ describe("adjacent posts", () => {
 });
 
 describe("tags", () => {
+  it("turns a tag into a URL-safe slug", () => {
+    assert.equal(tagSlug("cyber security"), "cyber-security");
+    assert.equal(tagSlug("Homelab"), "homelab");
+  });
+
   it("counts posts per tag, most used first", () => {
     const tags = getAllTags();
     assert.ok(tags.length > 0);
-    for (const { tag, count } of tags) {
-      assert.equal(getPostsByTag(tag).length, count, tag);
+    for (const { tag, slug, count } of tags) {
+      assert.equal(getPostsByTagSlug(slug).length, count, tag);
     }
     const counts = tags.map((entry) => entry.count);
     assert.deepEqual(counts, [...counts].sort((a, b) => b - a));
   });
 
+  it("gives every tag a distinct slug", () => {
+    const slugs = getAllTags().map((entry) => entry.slug);
+    assert.equal(new Set(slugs).size, slugs.length);
+  });
+
+  it("finds a tag by its slug", () => {
+    const [first] = getAllTags();
+    assert.equal(getTagBySlug(first.slug)?.tag, first.tag);
+    assert.equal(getTagBySlug("no-such-tag"), null);
+  });
+
   it("returns no posts for an unused tag", () => {
-    assert.deepEqual(getPostsByTag("no-such-tag"), []);
+    assert.deepEqual(getPostsByTagSlug("no-such-tag"), []);
   });
 });
 

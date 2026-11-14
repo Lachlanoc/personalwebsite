@@ -2,6 +2,7 @@ import Link from "next/link";
 import Container from "@/app/_components/container";
 import { NavLink } from "@/app/_components/nav-link";
 import { ThemeToggle } from "@/app/_components/theme-toggle";
+import { site } from "@/lib/site";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         {/* On narrow phones the nav drops to its own row under the name. */}
         <div className="flex flex-wrap items-center gap-x-8 gap-y-1 py-3">
           <Link href="/" className="text-lg font-semibold">
-            Lachlan O'Connell
+            {site.name}
           </Link>
           <nav
             aria-label="Main"

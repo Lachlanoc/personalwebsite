@@ -1,40 +1,62 @@
+import type { Metadata } from "next";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import Container from "@/app/_components/container";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa6";
+import { EmailLink } from "@/app/_components/email-link";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
+
+const linkClass = "text-accent underline underline-offset-4 hover:no-underline";
+
+/** "https://github.com/Lachlanoc" -> "github.com/Lachlanoc" */
+const withoutScheme = (url: string) => url.replace(/^https?:\/\//, "");
 
 export default function ContactPage() {
   return (
     <main>
       <Container>
-        <div className="pt-16 md:pt-32 pb-12 md:pb-20">
-          <article className="flex flex-col items-center justify-center px-6 text-center">
-            <h1 className="text-4xl font-bold mb-8">Get in Contact</h1>
-            <p className="text-xl max-w-2xl text-muted mb-8">
-              If you'd like to get in touch, feel free to reach out via any of the
-              methods below.
-              <br />
-              <br />
-              You can find me on GitHub, LinkedIn, or send me an email directly.
-              <br />
-              <br />
-              lachlanoco [at] gmail.com
-            </p>
-            <div className="flex flex-row items-center justify-center gap-10 text-5xl text-ink">
-              <a
-                href="https://github.com/Lachlanoc"
-                aria-label="GitHub"
-                className="transition-transform duration-200 hover:scale-110"
-              >
-                <FaGithub />
+        <div className="max-w-[40rem]">
+          <h1 className="text-3xl font-semibold">Get in contact</h1>
+          <p className="mt-5 text-lg leading-[1.65]">
+            If you'd like to get in touch, feel free to reach out via any of
+            the methods below.
+          </p>
+
+          <dl className="mt-8 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 gap-y-4 text-lg">
+            <dt className="flex items-center gap-3 text-muted">
+              <FaEnvelope aria-hidden="true" />
+              Email
+            </dt>
+            <dd>
+              <EmailLink
+                user={site.email.user}
+                domain={site.email.domain}
+                className={linkClass}
+              />
+            </dd>
+
+            <dt className="flex items-center gap-3 text-muted">
+              <FaGithub aria-hidden="true" />
+              GitHub
+            </dt>
+            <dd>
+              <a href={site.links.github} className={linkClass}>
+                {withoutScheme(site.links.github)}
               </a>
-              <a
-                href="https://linkedin.com/in/lachlan-oc"
-                aria-label="LinkedIn"
-                className="transition-transform duration-200 hover:scale-110"
-              >
-                <FaLinkedin />
+            </dd>
+
+            <dt className="flex items-center gap-3 text-muted">
+              <FaLinkedin aria-hidden="true" />
+              LinkedIn
+            </dt>
+            <dd>
+              <a href={site.links.linkedin} className={linkClass}>
+                {withoutScheme(site.links.linkedin)}
               </a>
-            </div>
-          </article>
+            </dd>
+          </dl>
         </div>
       </Container>
     </main>

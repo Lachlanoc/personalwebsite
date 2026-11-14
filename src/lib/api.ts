@@ -51,19 +51,32 @@ export function getAllPosts(): Post[] {
   return cachedPosts;
 }
 
+/** URL form of a tag: "cyber security" -> "cyber-security". */
+export function tagSlug(tag: string): string {
+  return tag.trim().toLowerCase().replace(/\s+/g, "-");
+}
+
+export type TagSummary = { tag: string; slug: string; count: number };
+
 /** Tags with how many posts use each, most used first, then alphabetical. */
-export function getAllTags(): { tag: string; count: number }[] {
+export function getAllTags(): TagSummary[] {
   const counts = new Map<string, number>();
   for (const post of getAllPosts()) {
     for (const tag of post.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1);
   }
   return [...counts]
-    .map(([tag, count]) => ({ tag, count }))
+    .map(([tag, count]) => ({ tag, slug: tagSlug(tag), count }))
     .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
 }
 
-export function getPostsByTag(tag: string): Post[] {
-  return getAllPosts().filter((post) => post.tags.includes(tag));
+export function getTagBySlug(slug: string): TagSummary | null {
+  return getAllTags().find((entry) => entry.slug === slug) ?? null;
+}
+
+export function getPostsByTagSlug(slug: string): Post[] {
+  return getAllPosts().filter((post) =>
+    post.tags.some((tag) => tagSlug(tag) === slug),
+  );
 }
 
 /** The posts published just before and just after the given one. */
