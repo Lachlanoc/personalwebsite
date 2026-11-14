@@ -1,10 +1,13 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
-import markdownToHtml from "@/lib/markdownToHtml";
+import { renderMarkdown } from "@/lib/markdown";
 import Container from "@/app/_components/container";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+
+// Only the posts that exist at build time are valid pages.
+export const dynamicParams = false;
 
 export default async function Post(props: Params) {
   const params = await props.params;
@@ -14,21 +17,20 @@ export default async function Post(props: Params) {
     return notFound();
   }
 
-  const content = await markdownToHtml(post.content || "");
+  const { html } = await renderMarkdown(post.content || "");
   return (
     <main>
       <Container>
         <article className="prose prose-lg prose-headings:break-words prose-headings:hyphens-auto
             prose-headings:mt-8 prose-headings:font-semibold
-            prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-            prose-code:before:content-none prose-code:after:content-none prose-code:bg-surface prose-code:rounded-xs prose-code:px-1.5 prose-code:py-0.5 prose-code:font-normal
-            overflow-hidden max-w-none mb-16">
+            prose-h2:text-2xl prose-h3:text-xl
+            max-w-none mb-16">
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
           />
-          <PostBody content={content} />
+          <PostBody content={html} />
         </article>
       </Container>
     </main>

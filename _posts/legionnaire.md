@@ -3,6 +3,7 @@ title: "Legionnaire - ML Powered SIEM"
 excerpt: "A Security Information and Event Management platform that provides automated threat detection. Built for UQCS Hackathon 2025."
 coverImage: "/assets/blog/legionnaire/cover.webp"
 date: "2025-09-03"
+tags: ["cyber security", "hackathon", "ai", "projects"]
 ogImage:
   url: "/assets/blog/legionnaire/icon.webp"
 ---

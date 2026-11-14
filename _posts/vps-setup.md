@@ -3,6 +3,7 @@ title: "How I Setup a New VPS"
 excerpt: "Ensuring things are secure and ready for other applications on a VPS running Debian."
 coverImage: "/assets/blog/vps-setup/cover.webp"
 date: "2026-02-14"
+tags: ["homelab", "cyber security"]
 ogImage:
   url: "/assets/blog/vps-setup/cover.webp"
 ---

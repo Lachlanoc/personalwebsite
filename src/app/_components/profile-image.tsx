@@ -1,9 +1,4 @@
-"use client";
-
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
-import cn from "classnames";
-import { FaUser } from "react-icons/fa6";
+import { SiteImage } from "./site-image";
 
 type Props = {
   src: string;
@@ -11,48 +6,13 @@ type Props = {
 };
 
 export function ProfileImage({ src, alt }: Props) {
-  const [isLoading, setIsLoading] = useState(true);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (imgRef.current?.complete) {
-      setIsLoading(false);
-    }
-  }, []);
-
   return (
-    <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border border-line bg-surface flex items-center justify-center">
-      {/* Placeholder */}
-      <div
-        className={cn(
-          "about-pfp-skeleton absolute inset-0 flex items-center justify-center bg-surface transition-opacity duration-500",
-          isLoading ? "opacity-100 animate-pulse" : "opacity-0 pointer-events-none"
-        )}
-        aria-hidden="true"
-      >
-        <FaUser className="w-1/3 h-1/3 text-muted/40" />
-      </div>
-
-      <Image
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 640px) 288px, 384px"
-        priority
-        className={cn(
-          "about-pfp-img rounded-full object-cover transition-opacity duration-500",
-          isLoading ? "opacity-0" : "opacity-100"
-        )}
-        onLoad={() => setIsLoading(false)}
-      />
-
-      <noscript>
-        <style>{`
-          .about-pfp-img { opacity: 1 !important; }
-          .about-pfp-skeleton { display: none !important; }
-        `}</style>
-      </noscript>
-    </div>
+    <SiteImage
+      src={src}
+      alt={alt}
+      sizes="(min-width: 40rem) 24rem, 18rem"
+      priority
+      className="size-72 rounded-full border border-line bg-surface object-cover sm:size-96"
+    />
   );
 }

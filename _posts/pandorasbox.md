@@ -3,6 +3,7 @@ title: "Pandora's Box AI Honeypot"
 excerpt: "A fine-tuned LLM powered honeypot, providing near-realtime realistic responses to web requests. Developed for LaunchHacks IV taking out 5th place 🏆"
 coverImage: "/assets/blog/pandorasbox/cover.webp"
 date: "2025-07-14"
+tags: ["cyber security", "hackathon", "ai", "projects"]
 ogImage:
   url: "/assets/blog/pandorasbox/treasure.jpg"
 ---

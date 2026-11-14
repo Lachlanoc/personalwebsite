@@ -1,25 +1,22 @@
-import cn from "classnames";
 import Link from "next/link";
-import Image from "next/image";
+import { SiteImage } from "./site-image";
 
 type Props = {
   title: string;
   src: string;
   slug?: string;
+  priority?: boolean;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, src, slug, priority }: Props) => {
   const image = (
-    <Image
+    <SiteImage
       src={src}
       alt={`Cover Image for ${title}`}
-      className={cn("shadow-sm w-full h-auto object-center rounded-lg", {
-        "hover:shadow-lg transition-shadow duration-200": slug,
-      })}
-      width={1300}
-      height={630}
-      sizes="100vw"
-      priority
+      // The content column is 60rem wide including its side padding.
+      sizes="(min-width: 60rem) 57.5rem, 100vw"
+      priority={priority}
+      className="h-auto w-full rounded-md object-center"
     />
   );
   return (

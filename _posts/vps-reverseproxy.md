@@ -3,6 +3,7 @@ title: "How to Securely Access Your Homelab Remotely Despite Having CGNAT"
 excerpt: "Through a combination of CloudFlare, Caddy, Authelia, Wireguard, and a VPS I have a safe and secure way to access my machines."
 coverImage: "/assets/blog/vps-reverseproxy/cover.webp"
 date: "2026-02-16"
+tags: ["homelab", "cyber security"]
 ogImage:
   url: "/assets/blog/vps-reverseproxy/cover.webp"
 ---
