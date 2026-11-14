@@ -52,9 +52,10 @@ export default async function Post(props: Params) {
     <main>
       <Container>
         <article>
-          {/* One reading column; the contents rail joins it on wide screens. */}
-          <div className="lg:grid lg:grid-cols-[minmax(0,40rem)_13rem] lg:gap-[4.5rem]">
-            <div className="min-w-0">
+          {/* The reading column is centred on the page. On wide screens the
+              contents list sits outside it, in the right-hand margin. */}
+          <div className="relative mx-auto max-w-[40rem]">
+            <div>
               <header>
                 <Link href="/" className="text-sm text-muted hover:text-ink">
                   All posts
@@ -78,7 +79,7 @@ export default async function Post(props: Params) {
               />
 
               {showToc && (
-                <details className="mt-8 rounded-md border border-line px-4 py-3 lg:hidden">
+                <details className="mt-8 rounded-md border border-line px-4 py-3 xl:hidden">
                   <summary className="cursor-pointer text-sm font-medium">
                     On this page
                   </summary>
@@ -95,7 +96,7 @@ export default async function Post(props: Params) {
             </div>
 
             {showToc && (
-              <aside className="hidden lg:block">
+              <aside className="absolute left-full top-0 ml-12 hidden h-full w-52 xl:block">
                 <nav
                   aria-label="On this page"
                   className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto"
@@ -105,9 +106,9 @@ export default async function Post(props: Params) {
                 </nav>
               </aside>
             )}
-          </div>
 
-          <PostNav older={older} newer={newer} />
+            <PostNav older={older} newer={newer} />
+          </div>
         </article>
       </Container>
       <script
