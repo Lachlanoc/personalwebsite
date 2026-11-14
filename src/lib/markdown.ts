@@ -10,9 +10,10 @@ import type { ImageManifest } from "./images.ts";
 import {
   rehypeAbsoluteUrls,
   rehypeCodeBlocks,
+  rehypeCodeContrast,
   rehypeCollectToc,
+  rehypeNormaliseHeadings,
   rehypeResponsiveImages,
-  rehypeShiftHeadings,
   rehypeTableScroll,
   type TocEntry,
 } from "./rehype-plugins.ts";
@@ -32,7 +33,7 @@ function createProcessor(manifest?: ImageManifest) {
       .use(remarkGfm)
       // Raw HTML in markdown is dropped, not passed through.
       .use(remarkRehype)
-      .use(rehypeShiftHeadings)
+      .use(rehypeNormaliseHeadings)
       .use(rehypeSlug)
       .use(rehypeCollectToc)
       .use(rehypeAutolinkHeadings, {
@@ -48,6 +49,7 @@ function createProcessor(manifest?: ImageManifest) {
         fallbackLanguage: "text",
         lazy: true,
       })
+      .use(rehypeCodeContrast)
       .use(rehypeTableScroll)
       .use(rehypeResponsiveImages, manifest)
       .use(rehypeStringify)
@@ -88,7 +90,7 @@ export async function renderMarkdownForFeed(
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
-    .use(rehypeShiftHeadings)
+    .use(rehypeNormaliseHeadings)
     .use(rehypeAbsoluteUrls, siteUrl)
     .use(rehypeStringify)
     .process(markdown);

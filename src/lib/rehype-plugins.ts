@@ -1,6 +1,7 @@
 import type { Element, Root } from "hast";
 import { toString } from "hast-util-to-string";
 import { SKIP, visit } from "unist-util-visit";
+import { ensureContrast } from "./contrast.ts";
 import { imageAttrs, type ImageManifest } from "./images.ts";
 
 /** Small transforms applied to a post's HTML tree. See markdown.ts for the order. */
@@ -19,13 +20,26 @@ function element(
 
 /**
  * Posts use "#" for their sections, but the page already has an <h1> for the
- * title. Move every heading down a level so each page has exactly one <h1>.
+ * title. Renumber headings so the outermost level a post uses becomes <h2> and
+ * no level is skipped below it ("#" then "###" becomes h2 then h3).
  */
-export function rehypeShiftHeadings() {
+export function rehypeNormaliseHeadings() {
   return (tree: Root) => {
+    // Levels currently open, outermost first: what the post wrote and what we output.
+    const open: { written: number; output: number }[] = [];
+
     visit(tree, "element", (node) => {
-      const match = /^h([1-5])$/.exec(node.tagName);
-      if (match) node.tagName = `h${Number(match[1]) + 1}`;
+      const match = /^h([1-6])$/.exec(node.tagName);
+      if (!match) return;
+      const written = Number(match[1]);
+
+      while (open.length > 0 && open[open.length - 1].written >= written) {
+        open.pop();
+      }
+      const parent = open[open.length - 1];
+      const output = Math.min(parent ? parent.output + 1 : 2, 6);
+      open.push({ written, output });
+      node.tagName = `h${output}`;
     });
   };
 }
@@ -150,6 +164,27 @@ export function rehypeAbsoluteUrls(siteUrl: string) {
       } else if (node.tagName === "img") {
         node.properties.src = absolute(node.properties.src) as string;
       }
+    });
+  };
+}
+
+/** The code block background in each theme. Must match --surface in globals.css (a test checks this). */
+export const CODE_SURFACE = { light: "#f4f5f7", dark: "#1c2027" } as const;
+
+/**
+ * Nudges any syntax colour that is too faint on the code background to the
+ * nearest shade that meets the contrast minimum. Runs after highlighting.
+ */
+export function rehypeCodeContrast() {
+  return (tree: Root) => {
+    visit(tree, "element", (node) => {
+      const style = node.properties.style;
+      if (typeof style !== "string" || !style.includes("--shiki-")) return;
+      node.properties.style = style.replace(
+        /--shiki-(light|dark):(#[0-9a-fA-F]{3,8})/g,
+        (_, theme: "light" | "dark", color: string) =>
+          `--shiki-${theme}:${ensureContrast(color, CODE_SURFACE[theme])}`,
+      );
     });
   };
 }

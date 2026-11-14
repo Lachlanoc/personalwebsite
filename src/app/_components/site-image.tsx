@@ -26,6 +26,7 @@ export function SiteImage({ src, alt, sizes, priority = false, className }: Prop
       height={attrs.height}
       alt={alt}
       loading={priority ? "eager" : "lazy"}
+      // React also preloads images marked high priority from <head>.
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
       className={className}

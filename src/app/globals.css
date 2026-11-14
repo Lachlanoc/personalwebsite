@@ -235,6 +235,12 @@ html:not([data-js]) .needs-js {
   line-height: 1.7;
 }
 
+/* The plugin shrinks <code> relative to its parent; inside a block that would
+   compound with the size set on the <pre>. */
+.prose .code-block pre code {
+  font-size: inherit;
+}
+
 /* The button needs scripting, so it only appears once scripts have run. */
 .code-copy {
   display: none;

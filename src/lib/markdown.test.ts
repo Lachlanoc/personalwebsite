@@ -23,6 +23,22 @@ describe("renderMarkdown", () => {
     assert.match(html, /<h4 id="detail">/);
   });
 
+  it("closes gaps when a post skips a heading level", async () => {
+    const { html } = await renderMarkdown("# Section\n\n### Deep\n\n### Also deep\n\n# Next", manifest);
+    assert.match(html, /<h2 id="section">/);
+    assert.match(html, /<h3 id="deep">/);
+    assert.match(html, /<h3 id="also-deep">/);
+    assert.match(html, /<h2 id="next">/);
+    assert.ok(!html.includes("<h4"));
+  });
+
+  it("starts at h2 whichever level the post starts at", async () => {
+    const { html } = await renderMarkdown("## Starts lower\n\n### Sub\n\n# Then higher", manifest);
+    assert.match(html, /<h2 id="starts-lower">/);
+    assert.match(html, /<h3 id="sub">/);
+    assert.match(html, /<h2 id="then-higher">/);
+  });
+
   it("lists h2 and h3 headings in the table of contents, in order", async () => {
     const { toc } = await renderMarkdown("# One\n\ntext\n\n## One point one\n\n### Too deep\n\n# Two", manifest);
     assert.deepEqual(toc, [
