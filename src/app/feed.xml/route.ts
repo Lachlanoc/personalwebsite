@@ -19,7 +19,7 @@ export async function GET() {
   );
 
   const xml = buildFeed({
-    title: site.name,
+    title: "Lachlan O'Connell",
     description: site.description,
     siteUrl: site.url,
     feedUrl: `${site.url}/feed.xml`,

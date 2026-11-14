@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { socialImage } from "./images.ts";
-import { site } from "./site.ts";
 
 type PageDetails = {
   /** Page title without the site name; omit for the home page. */
@@ -40,7 +39,7 @@ export function pageMetadata({
   const images = image
     ? [{ url: image.path, width: image.width, height: image.height }]
     : undefined;
-  const shareTitle = title ?? site.name;
+  const shareTitle = title ?? "Lachlan O'Connell";
 
   return {
     // Left out entirely for the home page, so the site's default title applies.
@@ -48,7 +47,7 @@ export function pageMetadata({
     description,
     alternates: { canonical: path },
     openGraph: {
-      siteName: site.name,
+      siteName: "Lachlan O'Connell",
       locale: "en_AU",
       url: path,
       title: shareTitle,
@@ -58,7 +57,7 @@ export function pageMetadata({
         ? {
             type: "article" as const,
             publishedTime: `${publishedDate}T00:00:00Z`,
-            authors: [site.name],
+            authors: ["Lachlan O'Connell"],
             tags,
           }
         : { type: "website" as const }),

@@ -18,7 +18,7 @@ export default function Index() {
   return (
     <main>
       <Container>
-        <h1 className="sr-only">{site.name}</h1>
+        <h1 className="sr-only">Lachlan O'Connell</h1>
 
         {latest && <FeaturedPost post={latest} />}
 

@@ -45,7 +45,7 @@ export default async function Post(props: Params) {
     url: `${site.url}/posts/${post.slug}`,
     image: image ? `${site.url}${image.path}` : undefined,
     keywords: post.tags.join(", "),
-    author: { "@type": "Person", name: site.name, url: `${site.url}/about` },
+    author: { "@type": "Person", name: "Lachlan O'Connell", url: `${site.url}/about` },
   };
 
   return (

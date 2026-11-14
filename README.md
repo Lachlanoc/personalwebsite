@@ -65,7 +65,7 @@ Things the build does for you:
 | `_posts/` | The posts |
 | `public/assets/` | Original images |
 | `src/app/` | Pages and components |
-| `src/lib/site.ts` | Site name, description, social links, contact email |
+| `src/lib/site.ts` | Site URL, description, social links, contact email |
 | `src/lib/` | Reading posts, Markdown rendering, search, feed, metadata |
 | `src/app/globals.css` | Colours, fonts and post typography |
 | `scripts/optimize-images.mjs` | Image resizing and link-preview images |

@@ -1,6 +1,5 @@
 /** Facts about the site that more than one page needs. */
 export const site = {
-  name: "Lachlan O'Connell",
   url: "https://lachlanoc.com",
   description: "Where I post about my projects, and ideas.",
   links: {

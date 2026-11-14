@@ -6,7 +6,6 @@ import { PostList } from "@/app/_components/post-list";
 import { TagLinks } from "@/app/_components/tag-links";
 import { getAllTags, getPostsByTagSlug, getTagBySlug } from "@/lib/api";
 import { pageMetadata } from "@/lib/metadata";
-import { site } from "@/lib/site";
 
 // Only the tags in use at build time are valid pages.
 export const dynamicParams = false;
@@ -58,7 +57,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 
   return pageMetadata({
     title: `Posts about ${tag.tag}`,
-    description: `Posts by ${site.name} about ${tag.tag}.`,
+    description: `Posts by Lachlan O'Connell about ${tag.tag}.`,
     path: `/tags/${tag.slug}`,
   });
 }

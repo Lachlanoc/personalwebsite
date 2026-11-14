@@ -27,7 +27,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   // Lets pages give relative URLs for their canonical link and preview image.
   metadataBase: new URL(site.url),
-  title: { default: site.name, template: `%s | ${site.name}` },
+  title: { default: "Lachlan O'Connell", template: "%s | Lachlan O'Connell" },
   description: site.description,
   icons: {
     icon: [
@@ -65,7 +65,7 @@ export default function RootLayout({
         <link
           rel="alternate"
           type="application/rss+xml"
-          title={site.name}
+          title="Lachlan O'Connell"
           href="/feed.xml"
         />
       </head>
