@@ -6,9 +6,9 @@ export function Footer() {
   return (
     <footer className="border-t border-line">
       <Container>
-        <div className="flex items-center justify-between py-6 text-sm text-muted">
+        <div className="flex items-center justify-between py-8 text-sm text-muted">
           <p>© {site.name}</p>
-          <div className="flex items-center gap-5 text-xl">
+          <div className="flex items-center gap-5 text-2xl">
             <a href="/feed.xml" aria-label="RSS feed" className="hover:text-ink">
               <FaRss aria-hidden="true" />
             </a>

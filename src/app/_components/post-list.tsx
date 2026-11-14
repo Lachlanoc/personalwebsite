@@ -17,12 +17,12 @@ export function PostList({ posts, titleHeading: TitleHeading }: Props) {
         // The title link stretches over the whole row, so the row is one target.
         <li
           key={post.slug}
-          className="group relative grid grid-cols-[5.5rem_minmax(0,1fr)] items-start gap-x-4 py-3 sm:grid-cols-[10rem_minmax(0,1fr)_auto] sm:gap-x-6"
+          className="group relative grid grid-cols-[7rem_minmax(0,1fr)] items-start gap-x-4 py-3 sm:grid-cols-[13rem_minmax(0,1fr)_auto] sm:gap-x-6"
         >
           <SiteImage
             src={post.coverImage}
             alt=""
-            sizes="(min-width: 40rem) 10rem, 5.5rem"
+            sizes="(min-width: 40rem) 13rem, 7rem"
             className="aspect-[2/1] w-full rounded-[3px] border border-line bg-surface object-cover"
           />
           <div>
