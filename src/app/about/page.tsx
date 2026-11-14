@@ -12,7 +12,7 @@ export default function AboutPage() {
             <ProfileImage src={pfp} alt="Photo of Lachlan O'Connell" />
           </div>
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
-          <p className="text-xl max-w-2xl text-neutral-600 dark:text-neutral-300 mb-8">
+          <p className="text-xl max-w-2xl text-muted mb-8">
             My name is Lachlan O'Connell, I'm a student at the University of Queensland currently studying a
             Bachelor of Computer Science with a dual major in Cyber Security and Programming Languages. 
             <br />

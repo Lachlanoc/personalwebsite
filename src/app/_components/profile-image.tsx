@@ -21,16 +21,16 @@ export function ProfileImage({ src, alt }: Props) {
   }, []);
 
   return (
-    <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-xl border-4 border-neutral-300 dark:border-slate-600 bg-neutral-200 dark:bg-slate-800 transition-all duration-300 flex items-center justify-center">
+    <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border border-line bg-surface flex items-center justify-center">
       {/* Placeholder */}
       <div
         className={cn(
-          "about-pfp-skeleton absolute inset-0 flex items-center justify-center bg-neutral-200 dark:bg-slate-800 transition-opacity duration-500",
+          "about-pfp-skeleton absolute inset-0 flex items-center justify-center bg-surface transition-opacity duration-500",
           isLoading ? "opacity-100 animate-pulse" : "opacity-0 pointer-events-none"
         )}
         aria-hidden="true"
       >
-        <FaUser className="w-1/3 h-1/3 text-neutral-400/50 dark:text-slate-600/50" />
+        <FaUser className="w-1/3 h-1/3 text-muted/40" />
       </div>
 
       <Image

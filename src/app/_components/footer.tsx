@@ -1,29 +1,26 @@
 import Container from "@/app/_components/container";
-import Link from "next/link";
-import { FaLinkedin, FaGithub } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-neutral-200 dark:bg-slate-800">
+    <footer className="border-t border-line">
       <Container>
-        <div className="py-8 flex flex-col lg:flex-row items-center">
-          <h3 className="text-xl lg:text-[1rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            <Link href="/" className="hover:underline">
-              Lachlan O'Connell ©
-            </Link>
-          </h3>
-          <div className="flex lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
+        <div className="flex items-center justify-between py-6 text-sm text-muted">
+          <p>© Lachlan O'Connell</p>
+          <div className="flex items-center gap-5 text-xl">
             <a
               href="https://github.com/Lachlanoc"
-              className="dark:text-white lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
+              aria-label="GitHub"
+              className="hover:text-ink"
             >
-              <FaGithub />
+              <FaGithub aria-hidden="true" />
             </a>
             <a
               href="https://linkedin.com/in/lachlan-oc"
-              className="dark:text-white pl-6 pr-4 lg:px-4 sm:text-3xl text-5xl transition-transform duration-200 hover:scale-120 mb-6 lg:mb-0"
+              aria-label="LinkedIn"
+              className="hover:text-ink"
             >
-              <FaLinkedin />
+              <FaLinkedin aria-hidden="true" />
             </a>
           </div>
         </div>
