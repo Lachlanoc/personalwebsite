@@ -1,6 +1,6 @@
 # A statically generated website using Next.js, Markdown, and TypeScript.
 
-The source for [lachlanoc.com](https://lachlanoc.com). Posts are Markdown files in `_posts/`; the site is built to static HTML and deployed to GitHub Pages on every push to `master`.
+The source for [lachlanoc.com](https://lachlanoc.com). Posts are Markdown files in `_posts/`; the site is built to static HTML and deployed to GitHub Pages on every push to `main`.
 
 ## Running it
 
