@@ -72,7 +72,7 @@ describe("adjacent posts", () => {
 
 describe("tags", () => {
   it("turns a tag into a URL-safe slug", () => {
-    assert.equal(tagSlug("cyber security"), "cyber-security");
+    assert.equal(tagSlug("Cyber Security"), "cyber-security");
     assert.equal(tagSlug("Homelab"), "homelab");
   });
 

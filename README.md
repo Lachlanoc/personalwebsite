@@ -33,7 +33,7 @@ title: "How I Setup a New VPS"
 excerpt: "One or two sentences shown in lists, search and link previews."
 coverImage: "/assets/blog/vps-setup/cover.webp"
 date: "2026-02-14"
-tags: ["homelab", "cyber security"]
+tags: ["Homelab", "Cyber Security"]
 ogImage:
   url: "/assets/blog/vps-setup/cover.webp"
 ---
@@ -48,7 +48,7 @@ Body text...
 | `title`, `excerpt` | Shown on the post, in lists, search, the RSS feed and link previews |
 | `coverImage` | Path under `public/` |
 | `date` | `YYYY-MM-DD`; posts are ordered by it |
-| `tags` | Each tag gets a page at `/tags/<tag>` (spaces become hyphens) |
+| `tags` | Shown exactly as written, so capitalise them. Each gets a page at `/tags/<tag>` (lowercased, spaces become hyphens) |
 | `ogImage.url` | Image for link previews on social sites; usually the cover |
 
 Things the build does for you:

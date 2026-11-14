@@ -3,7 +3,7 @@ title: "Japanese Verb Conjugation Cheat Sheet"
 excerpt: "Every form of する that I could find to help with studying."
 coverImage: "/assets/blog/verbconjugation/cover.webp"
 date: "2025-07-10"
-tags: ["japanese"]
+tags: ["Japanese"]
 ogImage:
   url: "/assets/blog/verbconjugation/cover.webp"
 ---

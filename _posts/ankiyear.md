@@ -3,7 +3,7 @@ title: "672 Days of Anki Flashcards - What I've Learnt"
 excerpt: "After spending way too much time doing flashcards everyday there's a lot of big and small things I've learnt."
 coverImage: "/assets/blog/ankiyear/cover.webp"
 date: "2026-01-01"
-tags: ["japanese"]
+tags: ["Japanese"]
 ogImage:
   url: "/assets/blog/ankiyear/cover.webp"
 ---

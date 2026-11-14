@@ -3,7 +3,7 @@ title: "Replacing Static Price Tags With QR Codes"
 excerpt: "Utilising QR codes to allow for easy adjustment of product prices without having to rewrite or print price tags every time."
 coverImage: "/assets/blog/qrcodeprices/cover.webp"
 date: "2025-07-27"
-tags: ["projects"]
+tags: ["Projects"]
 ogImage:
   url: "/assets/blog/qrcodeprices/cover.webp"
 ---

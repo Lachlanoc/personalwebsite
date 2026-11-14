@@ -51,7 +51,7 @@ export function getAllPosts(): Post[] {
   return cachedPosts;
 }
 
-/** URL form of a tag: "cyber security" -> "cyber-security". */
+/** URL form of a tag: "Cyber Security" -> "cyber-security". */
 export function tagSlug(tag: string): string {
   return tag.trim().toLowerCase().replace(/\s+/g, "-");
 }
