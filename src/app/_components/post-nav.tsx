@@ -20,7 +20,7 @@ export function PostNav({ older, newer }: Props) {
           <span className="block text-sm text-muted">Previous</span>
           <Link
             href={`/posts/${older.slug}`}
-            className="font-medium hover:text-accent"
+            className="font-medium underline-offset-4 hover:underline"
           >
             {older.title}
           </Link>
@@ -31,7 +31,7 @@ export function PostNav({ older, newer }: Props) {
           <span className="block text-sm text-muted">Next</span>
           <Link
             href={`/posts/${newer.slug}`}
-            className="font-medium hover:text-accent"
+            className="font-medium underline-offset-4 hover:underline"
           >
             {newer.title}
           </Link>

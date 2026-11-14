@@ -11,7 +11,7 @@ const Header = () => {
       <Container>
         {/* On narrow phones the nav drops to its own row under the name. */}
         <div className="flex flex-wrap items-center gap-x-8 gap-y-1 py-3">
-          <Link href="/" className="text-lg font-semibold">
+          <Link href="/" className="text-xl font-semibold">
             {site.name}
           </Link>
           <nav

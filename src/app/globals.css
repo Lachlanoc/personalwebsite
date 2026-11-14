@@ -103,7 +103,7 @@ html:not([data-js]) .needs-js {
   --tw-prose-body: var(--ink);
   --tw-prose-headings: var(--ink);
   --tw-prose-lead: var(--muted);
-  --tw-prose-links: var(--accent);
+  --tw-prose-links: var(--ink);
   --tw-prose-bold: var(--ink);
   --tw-prose-counters: var(--muted);
   --tw-prose-bullets: var(--muted);
@@ -161,7 +161,7 @@ html:not([data-js]) .needs-js {
 }
 
 .prose a:not(.heading-anchor):hover {
-  text-decoration: none;
+  text-decoration-thickness: 2px;
 }
 
 .prose img {

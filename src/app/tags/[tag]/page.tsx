@@ -41,7 +41,7 @@ export default async function TagPage(props: Params) {
           />
         </nav>
         <div className="mt-10">
-          <PostList posts={posts} yearHeading="h2" />
+          <PostList posts={posts} titleHeading="h2" />
         </div>
       </Container>
     </main>

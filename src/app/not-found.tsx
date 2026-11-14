@@ -19,7 +19,7 @@ export default function NotFound() {
           <p className="mt-5 text-lg">
             <Link
               href="/"
-              className="text-accent underline underline-offset-4 hover:no-underline"
+              className="underline underline-offset-4 hover:decoration-2"
             >
               See all posts
             </Link>

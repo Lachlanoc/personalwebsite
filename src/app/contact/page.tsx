@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
   path: "/contact",
 });
 
-const linkClass = "text-accent underline underline-offset-4 hover:no-underline";
+const linkClass = "underline underline-offset-4 hover:decoration-2";
 
 /** "https://github.com/Lachlanoc" -> "github.com/Lachlanoc" */
 const withoutScheme = (url: string) => url.replace(/^https?:\/\//, "");

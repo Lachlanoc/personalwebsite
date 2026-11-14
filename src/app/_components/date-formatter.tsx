@@ -1,15 +1,14 @@
-import { formatDate, type DateStyle } from "@/lib/dates";
+import { formatDate } from "@/lib/dates";
 
 type Props = {
   dateString: string;
-  style?: DateStyle;
   className?: string;
 };
 
-const DateFormatter = ({ dateString, style, className }: Props) => {
+const DateFormatter = ({ dateString, className }: Props) => {
   return (
     <time dateTime={dateString} className={className}>
-      {formatDate(dateString, style)}
+      {formatDate(dateString)}
     </time>
   );
 };

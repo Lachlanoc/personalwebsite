@@ -9,7 +9,7 @@ export function Toc({ entries }: { entries: TocEntry[] }) {
           <a
             href={`#${entry.id}`}
             data-toc-link={entry.id}
-            className="text-muted hover:text-ink aria-[current=location]:font-medium aria-[current=location]:text-accent"
+            className="text-muted hover:text-ink aria-[current=location]:font-medium aria-[current=location]:text-ink"
           >
             {entry.text}
           </a>

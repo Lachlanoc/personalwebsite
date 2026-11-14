@@ -19,13 +19,8 @@ export default function Index() {
     <main>
       <Container>
         <h1 className="sr-only">{site.name}</h1>
-        <p className="max-w-[40rem] text-xl">{site.intro}</p>
 
-        {latest && (
-          <div className="mt-12">
-            <FeaturedPost post={latest} />
-          </div>
-        )}
+        {latest && <FeaturedPost post={latest} />}
 
         {earlier.length > 0 && (
           <section className="mt-20" aria-labelledby="earlier-posts">
@@ -37,7 +32,7 @@ export default function Index() {
                 <TagLinks tags={tags} />
               </nav>
             </div>
-            <PostList posts={earlier} yearHeading="h3" />
+            <PostList posts={earlier} titleHeading="h3" />
           </section>
         )}
       </Container>
