@@ -3,6 +3,7 @@ title: "How to Securely Access Your Homelab Remotely Despite Having CGNAT"
 excerpt: "Through a combination of CloudFlare, Caddy, Authelia, Wireguard, and a VPS I have a safe and secure way to access my machines."
 coverImage: "/assets/blog/vps-reverseproxy/cover.webp"
 date: "2026-02-16"
+tags: ["Homelab", "Cyber Security"]
 ogImage:
   url: "/assets/blog/vps-reverseproxy/cover.webp"
 ---
@@ -245,7 +246,7 @@ First step is install wireguard on the VPS.
 sudo apt install wireguard
 ```
 
-Then for the keys I'm using this really handy set of bash commands from Mochman's [Bypassing a CGNAT with Wireguard](github.com/mochman/Bypass_CGNAT) repo.
+Then for the keys I'm using this really handy set of bash commands from Mochman's [Bypassing a CGNAT with Wireguard](https://github.com/mochman/Bypass_CGNAT) repo.
 
 ```bash
 umask 077 && printf "[Interface]\nPrivateKey = " | sudo tee /etc/wireguard/wg0.conf > /dev/null

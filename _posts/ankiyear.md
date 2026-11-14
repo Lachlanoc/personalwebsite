@@ -3,6 +3,7 @@ title: "672 Days of Anki Flashcards - What I've Learnt"
 excerpt: "After spending way too much time doing flashcards everyday there's a lot of big and small things I've learnt."
 coverImage: "/assets/blog/ankiyear/cover.webp"
 date: "2026-01-01"
+tags: ["Japanese"]
 ogImage:
   url: "/assets/blog/ankiyear/cover.webp"
 ---
@@ -17,7 +18,7 @@ such as YouTube, games, random research topics, or whatever it may be. By rollin
 it's all I've been exposed to for the morning, which keeps me far more focused than trying to do it during random times throughout the day.
 
 This also led to trying to min-max how I use my phones to reduce distractions meaning I have an almost dedicated second study phone at this point. 
-More on this in my [phone setup](/posts/phone-setup) post.
+
 
 # SRS, FSRS, and Optimising Settings
 Complete optimisation of your Anki settings is very complex and perfecting your FSRS parameters by manually removing or adjusting them is still beyond me. Something simple that I recommend everyone enable immediately is FSRS. [FSRS](https://github.com/open-spaced-repetition/fsrs4anki/wiki/ABC-of-FSRS) is a spaced repetition algorithm that is better than the legacy SM-2 algorithm for [99% of users](https://github.com/open-spaced-repetition/srs-benchmark/blob/main/plots/Superiority%2C%2019990.png) \(based on FSRS-5, not the latest FSRS6). This does introduce a few more settings so it's probably worthwhile to learn a little about what's going on. [This post](https://www.reddit.com/r/Anki/comments/18jvyun/some_posts_and_articles_about_fsrs/) is a good place to find resources.

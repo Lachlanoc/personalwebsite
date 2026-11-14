@@ -3,6 +3,7 @@ title: "How I Setup a UPS for My Proxmox Server"
 excerpt: "Ditching cloud software and USB passthrough for a host-level apcupsd setup that gracefully shuts down my VMs."
 coverImage: "/assets/blog/upsbackup/cover.webp"
 date: "2026-04-02"
+tags: ["Homelab"]
 ogImage:
   url: "/assets/blog/upsbackup/cover.webp"
 ---

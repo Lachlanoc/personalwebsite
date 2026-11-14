@@ -7,6 +7,9 @@ const eslintConfig = defineConfig([
     rules: {
       // The pages are mostly prose; plain apostrophes in JSX text are fine.
       "react/no-unescaped-entities": "off",
+      // A static export has no image optimiser, so next/image adds nothing;
+      // images go through SiteImage and scripts/optimize-images.mjs instead.
+      "@next/next/no-img-element": "off",
     },
   },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),

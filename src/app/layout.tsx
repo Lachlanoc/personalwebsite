@@ -1,21 +1,50 @@
 import Footer from "@/app/_components/footer";
 import Header from "@/app/_components/header";
-import Container from "@/app/_components/container";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import { site } from "@/lib/site";
+import { themeInitScript } from "@/lib/theme";
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// Plex for prose and code. Japanese text uses the reader's system fonts (see
+// --font-sans in globals.css): the web font's declarations alone would add
+// about 67 KB of CSS to every page.
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-plex-sans",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-plex-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: `Lachlan O'Connell`,
-  description: `Where I post about my projects, and ideas.`,
-  // openGraph: {
-  //   images: [HOME_OG_IMAGE_URL],
-  // },
+  // Lets pages give relative URLs for their canonical link and preview image.
+  metadataBase: new URL(site.url),
+  title: { default: "Lachlan O'Connell", template: "%s | Lachlan O'Connell" },
+  description: site.description,
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/favicon/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#14171c" },
+  ],
 };
 
 export default function RootLayout({
@@ -24,29 +53,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${plexSans.variable} ${plexMono.variable}`}
+      // The theme script may set data-theme before React hydrates.
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        
-        <meta name="theme-color" content="#000" />
-        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* Here rather than in metadata: a page's own "alternates" would replace it. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Lachlan O'Connell"
+          href="/feed.xml"
+        />
       </head>
-      <body
-        className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
-      >
-          <div className="">
-            <ThemeSwitcher />
-          </div>
-          <div className="min-h-screen">
-            <Container>
-              <Header />
-            </Container>
-            {children}
-          </div>
+      <body className="flex min-h-screen flex-col font-sans antialiased">
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-20 focus:rounded-sm focus:bg-paper focus:px-3 focus:py-2"
+        >
+          Skip to content
+        </a>
+        <Header />
+        <div id="content" className="flex-1 pb-24 pt-10">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

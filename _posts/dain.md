@@ -3,6 +3,7 @@ title: "Bringing My Office to a Hackathon"
 excerpt: "Bringing 5 computers, a network switch, and an ultrawide monitor to a 48-hour hackathon to build DAIN: a Distributed Agentic Inference Network."
 coverImage: "/assets/blog/dain/cover.webp"
 date: "2026-09-11"
+tags: ["Hackathon", "AI"]
 ogImage:
   url: "/assets/blog/dain/cover.webp"
 ---
