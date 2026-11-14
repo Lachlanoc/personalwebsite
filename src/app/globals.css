@@ -93,6 +93,11 @@
   }
 }
 
+/* Controls that only work with scripting stay hidden until scripts have run. */
+html:not([data-js]) .needs-js {
+  display: none;
+}
+
 /* Post typography follows the tokens instead of the plugin's grey scale. */
 .prose {
   --tw-prose-body: var(--ink);

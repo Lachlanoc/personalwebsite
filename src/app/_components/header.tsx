@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/app/_components/container";
 import { NavLink } from "@/app/_components/nav-link";
+import { SearchDialog } from "@/app/_components/search-dialog";
 import { ThemeToggle } from "@/app/_components/theme-toggle";
 import { site } from "@/lib/site";
 
@@ -24,6 +25,7 @@ const Header = () => {
             <NavLink href="/contact">Contact</NavLink>
           </nav>
           <div className="ml-auto flex items-center sm:ml-0">
+            <SearchDialog />
             <ThemeToggle />
           </div>
         </div>
