@@ -25,11 +25,19 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  // Lets pages give relative URLs for their canonical link and preview image.
+  metadataBase: new URL(site.url),
   title: { default: site.name, template: `%s | ${site.name}` },
   description: site.description,
-  // openGraph: {
-  //   images: [HOME_OG_IMAGE_URL],
-  // },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -53,12 +61,13 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        {/* Here rather than in metadata: a page's own "alternates" would replace it. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={site.name}
+          href="/feed.xml"
+        />
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <a

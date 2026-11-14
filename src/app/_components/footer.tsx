@@ -1,5 +1,5 @@
 import Container from "@/app/_components/container";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaRss } from "react-icons/fa6";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -9,6 +9,9 @@ export function Footer() {
         <div className="flex items-center justify-between py-6 text-sm text-muted">
           <p>© {site.name}</p>
           <div className="flex items-center gap-5 text-xl">
+            <a href="/feed.xml" aria-label="RSS feed" className="hover:text-ink">
+              <FaRss aria-hidden="true" />
+            </a>
             <a
               href={site.links.github}
               aria-label="GitHub"

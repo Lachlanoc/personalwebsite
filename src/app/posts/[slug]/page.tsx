@@ -2,7 +2,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAdjacentPosts, getAllPosts, getPostBySlug } from "@/lib/api";
+import { socialImage } from "@/lib/images";
 import { renderMarkdown } from "@/lib/markdown";
+import { pageMetadata } from "@/lib/metadata";
+import { site } from "@/lib/site";
 import { CodeCopy } from "@/app/_components/code-copy";
 import Container from "@/app/_components/container";
 import DateFormatter from "@/app/_components/date-formatter";
@@ -30,6 +33,20 @@ export default async function Post(props: Params) {
   const { older, newer } = getAdjacentPosts(post.slug);
   const showToc =
     toc.filter((entry) => entry.depth === 2).length >= MIN_SECTIONS_FOR_TOC;
+
+  // Describes the post to search engines in a form they can read directly.
+  const image = socialImage(post.slug);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    url: `${site.url}/posts/${post.slug}`,
+    image: image ? `${site.url}${image.path}` : undefined,
+    keywords: post.tags.join(", "),
+    author: { "@type": "Person", name: site.name, url: `${site.url}/about` },
+  };
 
   return (
     <main>
@@ -93,6 +110,13 @@ export default async function Post(props: Params) {
           <PostNav older={older} newer={newer} />
         </article>
       </Container>
+      <script
+        type="application/ld+json"
+        // "<" is escaped so post text can never close the script element.
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <CodeCopy />
       {showToc && <TocHighlight ids={toc.map((entry) => entry.id)} />}
     </main>
@@ -113,17 +137,14 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound();
   }
 
-  const title = `${post.title}`;
-
-  return {
-    title,
+  return pageMetadata({
+    title: post.title,
     description: post.excerpt,
-    openGraph: {
-      title,
-      description: post.excerpt,
-      images: [post.ogImage.url],
-    },
-  };
+    path: `/posts/${post.slug}`,
+    imageKey: post.slug,
+    publishedDate: post.date,
+    tags: post.tags,
+  });
 }
 
 export async function generateStaticParams() {

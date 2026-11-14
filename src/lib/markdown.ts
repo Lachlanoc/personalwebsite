@@ -8,6 +8,7 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import type { ImageManifest } from "./images.ts";
 import {
+  rehypeAbsoluteUrls,
   rehypeCodeBlocks,
   rehypeCollectToc,
   rehypeResponsiveImages,
@@ -72,4 +73,24 @@ export async function renderMarkdown(
     html: String(file),
     toc: (file.data.toc as TocEntry[] | undefined) ?? [],
   };
+}
+
+/**
+ * Converts a post's markdown to plain HTML for the RSS feed: no copy buttons,
+ * highlighting or resized images, since feed readers apply their own styling,
+ * and absolute URLs, since the HTML is read away from the site.
+ */
+export async function renderMarkdownForFeed(
+  markdown: string,
+  siteUrl: string,
+): Promise<string> {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeShiftHeadings)
+    .use(rehypeAbsoluteUrls, siteUrl)
+    .use(rehypeStringify)
+    .process(markdown);
+  return String(file);
 }

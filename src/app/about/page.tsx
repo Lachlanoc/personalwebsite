@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
 import Container from "@/app/_components/container";
 import { SiteImage } from "@/app/_components/site-image";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
-};
+  description:
+    "Lachlan O'Connell is a computer science student at the University of Queensland with an interest in cyber security and learning Japanese.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

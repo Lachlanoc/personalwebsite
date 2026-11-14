@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import Container from "@/app/_components/container";
 import { EmailLink } from "@/app/_components/email-link";
+import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact",
-};
+  description: "How to get in touch with Lachlan O'Connell: email, GitHub and LinkedIn.",
+  path: "/contact",
+});
 
 const linkClass = "text-accent underline underline-offset-4 hover:no-underline";
 

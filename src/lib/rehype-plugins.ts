@@ -135,3 +135,21 @@ export function rehypeResponsiveImages(manifest?: ImageManifest) {
     });
   };
 }
+
+/** Turns site-relative links and image sources into absolute ones, for the RSS feed. */
+export function rehypeAbsoluteUrls(siteUrl: string) {
+  const absolute = (value: unknown) =>
+    typeof value === "string" && value.startsWith("/") && !value.startsWith("//")
+      ? siteUrl + value
+      : value;
+
+  return (tree: Root) => {
+    visit(tree, "element", (node) => {
+      if (node.tagName === "a") {
+        node.properties.href = absolute(node.properties.href) as string;
+      } else if (node.tagName === "img") {
+        node.properties.src = absolute(node.properties.src) as string;
+      }
+    });
+  };
+}

@@ -59,3 +59,23 @@ export function imageAttrs(
     height: entry.height,
   };
 }
+
+/** A JPEG made for link previews on social sites and chat apps. */
+export type SocialImage = { path: string; width: number; height: number };
+
+const socialPath = join(process.cwd(), "public", "_img", "social.json");
+
+let cachedSocial: Record<string, SocialImage> | null = null;
+
+/**
+ * The preview image for a post (by slug), or "site" for any other page.
+ * Returns undefined if the image script has not produced one.
+ */
+export function socialImage(key: string): SocialImage | undefined {
+  if (!cachedSocial || process.env.NODE_ENV !== "production") {
+    cachedSocial = fs.existsSync(socialPath)
+      ? (JSON.parse(fs.readFileSync(socialPath, "utf8")) as Record<string, SocialImage>)
+      : {};
+  }
+  return cachedSocial[key];
+}

@@ -3,7 +3,13 @@ import { FeaturedPost } from "@/app/_components/featured-post";
 import { PostList } from "@/app/_components/post-list";
 import { TagLinks } from "@/app/_components/tag-links";
 import { getAllPosts, getAllTags } from "@/lib/api";
+import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+
+export const metadata = pageMetadata({
+  description: site.description,
+  path: "/",
+});
 
 export default function Index() {
   const [latest, ...earlier] = getAllPosts();
