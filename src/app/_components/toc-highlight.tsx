@@ -28,6 +28,15 @@ export function TocHighlight({ ids }: { ids: string[] }) {
         if (heading.getBoundingClientRect().top > REACHED_OFFSET_PX) break;
         current = heading.id;
       }
+      // A short final section can never scroll up to the offset, so the end of
+      // the page counts as reaching the last heading.
+      const atPageEnd =
+        window.scrollY > 0 &&
+        window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 2;
+      if (atPageEnd && headings.length > 0) {
+        current = headings[headings.length - 1].id;
+      }
       for (const link of links) {
         if (link.dataset.tocLink === current) {
           link.setAttribute("aria-current", "location");
