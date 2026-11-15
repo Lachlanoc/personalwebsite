@@ -27,7 +27,7 @@ export default function AboutPage() {
               <p>
                 My name is Lachlan O'Connell, I'm a graduate from the University of 
                 Queensland with a Bachelor of Computer Science majoring in Cyber Security 
-                and Programming Langugages.
+                and Programming Languages.
               </p>
               <p>
                 I'm passionate about cyber security, particularly on a national
