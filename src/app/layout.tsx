@@ -37,7 +37,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon/favicon.ico",
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
   },
-  manifest: "/favicon/site.webmanifest",
 };
 
 export const viewport: Viewport = {
