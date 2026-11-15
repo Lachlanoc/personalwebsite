@@ -25,9 +25,9 @@ export default function AboutPage() {
             <h1 className="text-3xl font-semibold">About me</h1>
             <div className="mt-5 space-y-5 text-lg leading-[1.65]">
               <p>
-                My name is Lachlan O'Connell, I'm a student at the University of
-                Queensland currently studying a Bachelor of Computer Science
-                with a dual major in Cyber Security and Programming Languages.
+                My name is Lachlan O'Connell, I'm a graduate from the University of 
+                Queensland with a Bachelor of Computer Science majoring in Cyber Security 
+                and Programming Langugages.
               </p>
               <p>
                 I'm passionate about cyber security, particularly on a national
