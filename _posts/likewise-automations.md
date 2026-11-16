@@ -1,11 +1,11 @@
 ---
-title: "Automating Labels and UV Print Prep for a Warehouse"
-excerpt: "Two automations for We Are Likewise that replaced hours of tedious manual label work and cut daily print prep from 5 minutes to 30 seconds."
-coverImage: "/assets/blog/likewise/cover.webp"
+title: "Automating Product Labels and UV Print Prep for a Warehouse"
+excerpt: "Two automations for We Are Likewise that replaced hours of tedious manual label work and cut daily print prep from 2 minutes to 15 seconds."
+coverImage: "/assets/blog/likewise-automations/cover.webp"
 date: "2026-11-15"
 tags: ["Projects"]
 ogImage:
-  url: "/assets/blog/likewise/cover.webp"
+  url: "/assets/blog/likewise-automations/cover.webp"
 ---
 
 These are two automations I built for We Are Likewise,
@@ -17,24 +17,21 @@ the Mimaki went from 5 or more minutes of focused work to about 30 seconds.
 ## The Problem
 
 At Likewise the stock prep is organised through a web app built on top of a Google
-Sheet, with other parts of the warehouse run through other systems. The staff use the
-app to see what needs prepping, record what has been prepped, and print labels. Two
-jobs around that app were still completely manual.
+Sheet. The staff use the app to see what needs prepping, record what has been prepped,
+and print labels. Two jobs around that app were still completely manual.
 
 The first was labels. Every product needs a label with its name and a QR code of its
 SKU, and each one was laid out by hand in Illustrator and saved as a file for the
 label printer. At about 4 minutes each across 620 SKUs that's roughly 41 hours of
-work for the full set, and every new product added to the pile.
+work for the full set, and causes delays whenever new SKUs are introduced.
 
-The second was the Mimaki. Made to order items get a logo printed on them, with 9
+The second was the Mimaki UV printing. Made to order items get a logo printed on them, with 9
 fitting on the printer bed at a time in a 3x3 jig. There are currently 2 different
 products that need different head heights in the printer, so they can't share a bed
-and the job has to be done twice each day, once for each. Both times someone would
-check the orders, open the jig template in Illustrator, line up each logo in its slot,
-export the file, and bring it into the printer software. Afterwards the orders still
-had to be marked as prepped and their labels printed separately.
-
-![The old Illustrator jig template with logos placed by hand](/assets/blog/likewise/jig-template.webp)
+and the job is typically done twice a day, once for each product type. 
+Both times someone would check the orders, open the jig template in Illustrator, 
+line up each logo in its slot, export the file, and bring it into the printer software.
+Afterwards the orders still had to be marked as prepped and their labels printed separately.
 
 ## Working Out What Was Needed
 
@@ -62,7 +59,7 @@ and the new label is ready to print straight away.
 There are a few names that just won't fit at 5pt, and for those the product is flagged
 for someone to look at in Illustrator so a bad label never gets printed.
 
-![A generated label next to one made by hand](/assets/blog/likewise/label.webp)
+![Generated labels coming out of label printer](/assets/blog/likewise-automations/label.webp)
 
 ## Mimaki Automation
 
@@ -72,7 +69,7 @@ PC picks up the request, places each logo in its slot on the bed, and saves the 
 ready to load. Once that's done the orders are ticked off, both parts of each product
 are recorded as prepped, and their labels come out of the label printer.
 
-![The 'Send logos to Mimaki' dialog in the web app](/assets/blog/likewise/send-dialog.webp)
+![The 'Send logos to Mimaki' dialog in the web app](/assets/blog/likewise-automations/send-dialog.webp)
 
 I wasn't able to automate all of it. My first plan was to drop the files into a hot
 folder so the printer software, RasterLink, would do the rest, but it could only create
@@ -84,7 +81,7 @@ for him to load it with a RasterLink tool that remembers the settings for the ot
 layers. It's one short manual step, but it's really straightforward and takes about 30
 seconds.
 
-![A finished bed of logos on the jig](/assets/blog/likewise/printed-bed.webp)
+![The jig sliding into the Mimaki](/assets/blog/likewise-automations/mimaki.gif)
 
 ## Feedback and Changes
 
