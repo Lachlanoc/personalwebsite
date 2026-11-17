@@ -8,8 +8,8 @@ ogImage:
   url: "/assets/blog/likewise-automations/cover.webp"
 ---
 
-These are two automations I built for We Are Likewise,
-one that creates product labels and one that prepares print files for their Mimaki
+These are two automations I built for We Are Likewise while working in their warehouse.
+One that creates product labels and one that prepares print files for their Mimaki
 UV printer. Each of the 620 product labels used to take about 4 minutes to make by
 hand and is now generated with no one involved, and setting up a bed of logos for
 the Mimaki went from 5 or more minutes of focused work to about 30 seconds.
